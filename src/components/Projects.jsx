@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-// Assuming you have icons for different technologies, like React, Node.js, etc.
-import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaJs } from "react-icons/fa"; // You can add more icons as needed.
+import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaJs } from "react-icons/fa";
 
 function Projects() {
   const [modalOpen, setModalOpen] = useState(false);

@@ -1,5 +1,5 @@
 // import React from "react";
-// import { FaUserCircle } from "react-icons/fa"; // Importing user icon
+// import { FaUserCircle } from "react-icons/fa";
 
 // function Testimonials() {
 //   return (

@@ -23,7 +23,6 @@ function About() {
           About Me
         </h2>
 
-        {/* About text with animation */}
         <p
           className="text-lg sm:text-xl leading-relaxed mb-6 text-gray-700"
           data-aos="fade-up"

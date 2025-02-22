@@ -74,7 +74,6 @@ function Navbar() {
                 }`}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
-                {/* Active link underline */}
                 {activeSection === section && (
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600"></div>
                 )}

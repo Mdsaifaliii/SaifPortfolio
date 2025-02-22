@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import AOS from "aos"; // AOS (Animate On Scroll) for scroll animations
-import "aos/dist/aos.css"; // Import AOS CSS for animations
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FaArrowDown, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"; // Icons for buttons and social links
 
 function Hero() {
-  // Initialize AOS animations when the component mounts
   useEffect(() => {
     AOS.init();
   }, []);
@@ -22,7 +21,6 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/70 to-white/40"></div>
 
       <div className="relative p-6 sm:p-8 rounded-lg text-center z-10">
-        {/* Hi and Name with Noto Sans Font and Gradient Color */}
         <h1
           className="text-5xl sm:text-6xl font-extrabold mb-4 tracking-wide leading-tight text-gray-800"
           data-aos="fade-up"
@@ -101,7 +99,6 @@ function Hero() {
           </a>
         </div>
 
-        {/* Inspirational Tagline */}
         <p
           className="mt-6 text-lg sm:text-xl md:text-2xl italic text-gray-500 font-light tracking-wide"
           data-aos="fade-up"
