@@ -12,7 +12,7 @@ function Projects() {
       description: "A scalable and responsive platform with integrated payment solutions.",
       link: "https://wearluxe-ten.vercel.app/",
       image: "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg?uid=R154646716&ga=GA1.1.248949094.1714507235&semt=ais_hybrid",
-      status: "Live",
+      status: "In Progress",
       stack: [<FaReact key="react" className="text-blue-500" />, <FaNodeJs key="node" className="text-green-500" />, <FaCss3Alt key="css" className="text-blue-300" />],
     },
     {
@@ -20,7 +20,7 @@ function Projects() {
       description: "Real-time weather updates using a REST API and geolocation.",
       link: "https://mdsaifaliii.github.io/CBTC/",
       image: "https://img.freepik.com/premium-photo/create-modern-weather-app-interface-image_1008415-70513.jpg?uid=R154646716&ga=GA1.1.248949094.1714507235&semt=ais_hybrid",
-      status: "In Progress",
+      status: "Live",
       stack: [<FaHtml5 key="Html" className="text-orange-500" />, <FaCss3Alt key="css" className="text-blue-500" />,<FaJs key="javascript" className="text-yellow-500" />],
     },
     {
@@ -28,6 +28,7 @@ function Projects() {
       description: "A to-do list contains all the tasks that need to be done and can be ticked off accordingly.",
       link: "https://mdsaifaliii.github.io/Todo-list/",
       image: "https://img.freepik.com/free-vector/checklist-concept-illustration_114360-479.jpg?uid=R154646716&ga=GA1.1.248949094.1714507235&semt=ais_hybrid",
+      status: "Live",
       stack: [<FaHtml5 key="Html" className="text-orange-500" />, <FaCss3Alt key="css" className="text-blue-500" />,<FaJs key="javascript" className="text-yellow-500" />],
     },
   ];

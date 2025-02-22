@@ -98,7 +98,6 @@ function Hero() {
             <FaLinkedin />
           </a>
         </div>
-
         <p
           className="mt-6 text-lg sm:text-xl md:text-2xl italic text-gray-500 font-light tracking-wide"
           data-aos="fade-up"
