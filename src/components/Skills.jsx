@@ -15,7 +15,10 @@ import {
   SiGithub,
   SiTailwindcss,
   SiCplusplus,
+  SiAdobexd,
+  SiMongodb,
 } from "react-icons/si"; // Import additional icons
+import { FaFigma } from "react-icons/fa";
 
 function Skills() {
   return (
@@ -119,6 +122,30 @@ function Skills() {
               <SiCplusplus className="text-6xl mx-auto" />
             </div>
             <p className="text-lg font-medium text-gray-700">C++</p>
+          </div>
+          
+          {/* Figma */}
+          <div className="transform transition-all duration-300 hover:scale-110">
+            <div className="w-24 h-24 mx-auto mb-4 text-blue-500">
+              <FaFigma className="text-6xl mx-auto" />
+            </div>
+            <p className="text-lg font-medium text-gray-700">Figma</p>
+          </div>
+          
+          {/* Adobexd */}
+          <div className="transform transition-all duration-300 hover:scale-110">
+            <div className="w-24 h-24 mx-auto mb-4 text-blue-500">
+              <SiAdobexd className="text-6xl mx-auto" />
+            </div>
+            <p className="text-lg font-medium text-gray-700">AdobeXD</p>
+          </div>
+          
+          {/* Mongodb */}
+          <div className="transform transition-all duration-300 hover:scale-110">
+            <div className="w-24 h-24 mx-auto mb-4 text-blue-500">
+              <SiMongodb className="text-6xl mx-auto" />
+            </div>
+            <p className="text-lg font-medium text-gray-700">MongoDB</p>
           </div>
         </div>
       </div>

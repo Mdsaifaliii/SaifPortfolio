@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-
-import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaJs } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaCss3Alt,
+  FaHtml5,
+  FaJs,
+} from "react-icons/fa";
 
 function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -11,25 +16,37 @@ function Projects() {
       title: "E-Commerce Website",
       description: "A scalable and responsive platform with integrated payment solutions.",
       link: "https://wearluxe-ten.vercel.app/",
-      image: "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg?uid=R154646716&ga=GA1.1.248949094.1714507235&semt=ais_hybrid",
+      image: "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg",
       status: "In Progress",
-      stack: [<FaReact key="react" className="text-blue-500" />, <FaNodeJs key="node" className="text-green-500" />, <FaCss3Alt key="css" className="text-blue-300" />],
+      stack: [
+        <FaReact key="react" className="text-blue-500" />,
+        <FaNodeJs key="node" className="text-green-500" />,
+        <FaCss3Alt key="css" className="text-blue-300" />,
+      ],
     },
     {
       title: "Weather App",
       description: "Real-time weather updates using a REST API and geolocation.",
       link: "https://mdsaifaliii.github.io/CBTC/",
-      image: "https://img.freepik.com/premium-photo/create-modern-weather-app-interface-image_1008415-70513.jpg?uid=R154646716&ga=GA1.1.248949094.1714507235&semt=ais_hybrid",
+      image: "https://img.freepik.com/premium-photo/create-modern-weather-app-interface-image_1008415-70513.jpg",
       status: "Live",
-      stack: [<FaHtml5 key="Html" className="text-orange-500" />, <FaCss3Alt key="css" className="text-blue-500" />,<FaJs key="javascript" className="text-yellow-500" />],
+      stack: [
+        <FaHtml5 key="Html" className="text-orange-500" />,
+        <FaCss3Alt key="css" className="text-blue-500" />,
+        <FaJs key="javascript" className="text-yellow-500" />,
+      ],
     },
     {
       title: "Todo List App",
       description: "A to-do list contains all the tasks that need to be done and can be ticked off accordingly.",
       link: "https://mdsaifaliii.github.io/Todo-list/",
-      image: "https://img.freepik.com/free-vector/checklist-concept-illustration_114360-479.jpg?uid=R154646716&ga=GA1.1.248949094.1714507235&semt=ais_hybrid",
+      image: "https://img.freepik.com/free-vector/checklist-concept-illustration_114360-479.jpg",
       status: "Live",
-      stack: [<FaHtml5 key="Html" className="text-orange-500" />, <FaCss3Alt key="css" className="text-blue-500" />,<FaJs key="javascript" className="text-yellow-500" />],
+      stack: [
+        <FaHtml5 key="Html" className="text-orange-500" />,
+        <FaCss3Alt key="css" className="text-blue-500" />,
+        <FaJs key="javascript" className="text-yellow-500" />,
+      ],
     },
   ];
 
@@ -44,74 +61,84 @@ function Projects() {
   };
 
   return (
-    <section id="projects" className="py-16 px-8 bg-gray-50">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <section id="projects" className="py-20 px-4 sm:px-10 bg-gray-100">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">Projects</h2>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition transform hover:scale-105"
+              className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition-transform transform hover:-translate-y-1 cursor-pointer"
               onClick={() => handleModalOpen(project)}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full h-52 object-cover"
               />
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="mb-4">{project.description}</p>
-              <p className="text-sm text-gray-500">Status: {project.status}</p>
-              <div className="flex space-x-2 mt-4">
-                {project.stack.map((icon, index) => (
-                  <div key={index} className="text-xl">{icon}</div>
-                ))}
+              <div className="p-5">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">{project.description}</p>
+                <span
+                  className={`inline-block text-xs px-3 py-1 rounded-full font-medium ${
+                    project.status === "Live"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-yellow-100 text-yellow-700"
+                  }`}
+                >
+                  {project.status}
+                </span>
+                <div className="flex items-center gap-3 mt-3">
+                  {project.stack.map((icon, i) => (
+                    <span key={i} className="text-2xl">{icon}</span>
+                  ))}
+                </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-blue-600 font-semibold hover:underline"
+                >
+                  View Project
+                </a>
               </div>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline mt-4 block"
-              >
-                View Project
-              </a>
             </div>
           ))}
         </div>
 
-        {/* Modal for Project Details */}
-        {modalOpen && (
-          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white p-8 rounded-lg w-3/4 max-w-3xl">
+        {/* Modal */}
+        {modalOpen && selectedProject && (
+          <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex justify-center items-center px-4">
+            <div className="bg-white w-full max-w-3xl rounded-lg overflow-y-auto max-h-[90vh] p-6 relative shadow-2xl">
+              <button
+                onClick={handleModalClose}
+                className="absolute top-4 right-4 text-red-600 font-bold text-xl hover:text-red-800"
+              >
+                &times;
+              </button>
               <h3 className="text-2xl font-bold mb-4">{selectedProject.title}</h3>
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-64 object-cover rounded-lg mb-4"
+                className="w-full h-64 object-cover rounded-md mb-4"
               />
-              <p className="text-lg mb-4">{selectedProject.description}</p>
-              <p className="text-sm text-gray-500">Status: {selectedProject.status}</p>
-              <div className="flex space-x-2 mt-4">
-                {selectedProject.stack.map((icon, index) => (
-                  <div key={index} className="text-xl">{icon}</div>
+              <p className="text-gray-700 mb-3">{selectedProject.description}</p>
+              <p className="text-sm text-gray-500 mb-2">Status: {selectedProject.status}</p>
+              <div className="flex items-center gap-3 mt-2 mb-4">
+                {selectedProject.stack.map((icon, i) => (
+                  <span key={i} className="text-2xl">{icon}</span>
                 ))}
               </div>
-              <div className="mt-4">
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
-                  Visit Live
-                </a>
-              </div>
-              <button
-                className="mt-6 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600"
-                onClick={handleModalClose}
+              <a
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 font-medium hover:underline"
               >
-                Close
-              </button>
+                Visit Live Site
+              </a>
             </div>
           </div>
         )}

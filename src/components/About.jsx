@@ -1,89 +1,99 @@
 import React, { useEffect } from "react";
-import { FaReact, FaCss3Alt, FaJsSquare, FaNodeJs } from "react-icons/fa"; // FontAwesome icons
-import AOS from "aos"; // AOS (Animate On Scroll) for scroll animations
-import "aos/dist/aos.css"; // AOS CSS for animations
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaFigma,
+  FaGitAlt,
+} from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function About() {
-  // Initialize AOS animations when the component mounts
   useEffect(() => {
-    AOS.init();
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
     <section
       id="about"
-      className="bg-gray-100 text-gray-800 py-20 px-6 sm:px-12 relative overflow-hidden"
+      className="bg-white py-24 px-6 md:px-12 lg:px-20 text-gray-900"
     >
-      <div className="max-w-4xl mx-auto text-center">
-        <h2
-          className="text-3xl sm:text-4xl font-bold mb-8 text-shadow-md text-gray-900"
-          data-aos="fade-up"
-          data-aos-duration="2000"
-        >
-          About Me
-        </h2>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        {/* LEFT: About Text */}
+        <div data-aos="fade-right">
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
+            I'm <span className="text-blue-600">Mohd Saif Ali</span>
+          </h2>
+          <h3 className="text-xl sm:text-2xl font-medium text-gray-600 mb-6">
+            Full Stack Web Developer & UI/UX Designer
+          </h3>
 
-        <p
-          className="text-lg sm:text-xl leading-relaxed mb-6 text-gray-700"
-          data-aos="fade-up"
-          data-aos-duration="2500"
-          data-aos-delay="200"
-        >
-          I'm Mohd Saif Ali, a passionate web developer with a strong focus on
-          building scalable and creative web applications. I specialize in front-end
-          development using the latest frameworks like React, Tailwind CSS, and
-          more. I believe in creating web experiences that are both functional and
-          beautiful. Whether it's crafting a sleek UI or optimizing performance,
-          I strive for excellence in every project.
-        </p>
+          <p className="text-lg leading-relaxed mb-6 text-gray-700">
+            With a passion for both design and development, I build modern,
+            responsive, and interactive web applications using tools like React,
+            Node.js, Firebase, and Tailwind CSS. I love translating complex ideas
+            into intuitive interfaces and ensuring user-centric, high-performing
+            solutions from front to back.
+          </p>
 
-        {/* Skills/Tools section with light color icons */}
-        <div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-8"
-          data-aos="fade-up"
-          data-aos-duration="3000"
-          data-aos-delay="400"
-        >
-          {/* React icon with light color theme */}
-          <div className="flex items-center justify-center space-x-2">
-            <FaReact className="w-12 h-12 text-blue-500" />
-            <span className="text-lg text-gray-800">React</span>
-          </div>
-          {/* CSS3 icon with light color theme */}
-          <div className="flex items-center justify-center space-x-2">
-            <FaCss3Alt className="w-12 h-12 text-blue-500" />
-            <span className="text-lg text-gray-800">CSS3</span>
-          </div>
-          {/* JavaScript icon with light color theme */}
-          <div className="flex items-center justify-center space-x-2">
-            <FaJsSquare className="w-12 h-12 text-yellow-400" />
-            <span className="text-lg text-gray-800">JavaScript</span>
-          </div>
-          {/* Node.js icon with light color theme */}
-          <div className="flex items-center justify-center space-x-2">
-            <FaNodeJs className="w-12 h-12 text-green-500" />
-            <span className="text-lg text-gray-800">Node.js</span>
-          </div>
+          <p className="text-lg leading-relaxed mb-8 text-gray-700">
+            Whether it's building scalable backends or crafting beautiful UIs in
+            Figma, my goal is to deliver exceptional digital experiences that feel
+            as good as they look.
+          </p>
+
+          <a
+            href="#projects"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition-transform transform hover:scale-105"
+          >
+            Explore My Projects
+          </a>
         </div>
 
-        {/* View Projects Button */}
-        <a
-          href="#projects"
-          className="bg-blue-500 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white inline-flex items-center"
-          data-aos="fade-up"
-          data-aos-duration="3500"
-          data-aos-delay="600"
-        >
-          View My Projects
-        </a>
+        {/* RIGHT: Skills Grid */}
+        <div data-aos="fade-left">
+          <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 justify-items-center">
+            <SkillCard icon={<FaHtml5 />} label="HTML5" color="text-orange-600" />
+            <SkillCard icon={<FaCss3Alt />} label="CSS3" color="text-blue-500" />
+            <SkillCard icon={<FaJs />} label="JavaScript" color="text-yellow-400" />
+            <SkillCard icon={<FaReact />} label="React" color="text-cyan-500" />
+            <SkillCard icon={<FaNodeJs />} label="Node.js" color="text-green-500" />
+            <SkillCard icon={<FaFigma />} label="Figma" color="text-pink-500" />
+            <SkillCard icon={<FaGitAlt />} label="Git" color="text-red-500" />
+            <SkillCard
+              icon={
+                <img
+                  src="https://firebase.google.com/images/brand-guidelines/logo-logomark.png"
+                  alt="Firebase"
+                  className="w-8 h-8"
+                />
+              }
+              label="Firebase"
+              color=""
+            />
+          </div>
+        </div>
       </div>
-
-      {/* Optional light background illustration */}
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-100 to-purple-100 opacity-30"
-        style={{ zIndex: -1 }}
-      ></div>
     </section>
+  );
+}
+
+// Skill Card Component
+function SkillCard({ icon, label, color }) {
+  return (
+    <div className="flex flex-col items-center group transform transition-transform hover:scale-110">
+      <div
+        className={`w-14 h-14 flex items-center justify-center text-3xl ${color}`}
+      >
+        {icon}
+      </div>
+      <span className="text-sm mt-2 text-gray-800 group-hover:text-blue-600 font-medium">
+        {label}
+      </span>
+    </div>
   );
 }
 
