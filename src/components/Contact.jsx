@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { firestoreDB } from "../firebase"; // Import Firestore instance
+import { firestoreDB } from "./Firebase"; // Import Firestore instance
 import { collection, addDoc } from "firebase/firestore"; // Import Firestore 
-import app from '../firebase';
+import app from './Firebase';
 
 
 function Contact() {
