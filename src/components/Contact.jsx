@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { firestoreDB } from "../firebase"; // Import Firestore instance
-import { collection, addDoc } from "firebase/firestore"; // Import Firestore functions
+import { collection, addDoc } from "firebase/firestore"; // Import Firestore 
+import app from '../firebase';
+
 
 function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
