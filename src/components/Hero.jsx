@@ -21,15 +21,6 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/70 to-white/40"></div>
 
       <div className="relative p-6 sm:p-8 rounded-lg text-center z-10">
-      <p
-          className="text-xl sm:text-2xl md:text-3xl mb-6 text-gray-700 tracking-wide font-light"
-          data-aos="fade-up"
-          data-aos-duration="2500"
-          data-aos-delay="200"
-          style={{ fontFamily: "'Noto Sans', sans-serif" }}
-        >
-          Web Developer
-        </p>
         <h1
           className="text-5xl sm:text-6xl font-extrabold mb-4 tracking-wide leading-tight text-gray-800"
           data-aos="fade-up"
@@ -47,6 +38,7 @@ function Hero() {
             Mohd Saif Ali
           </span>
         </h1>
+
         <p
           className="text-xl sm:text-2xl md:text-3xl mb-6 text-gray-700 tracking-wide font-light"
           data-aos="fade-up"

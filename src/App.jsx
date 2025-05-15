@@ -15,8 +15,8 @@ function App() {
       <main className="mt-16">
         <Hero />
         <About />
-        <Projects />
         <Skills />
+        <Projects />
         <Contact />
         {/* <Testimonials/> */}
       </main>
