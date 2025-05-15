@@ -1,20 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// Firebase configuration
+// Firebase configuration using env variables
 const firebaseConfig = {
-  apiKey: "AIzaSyDnRxsT8LaHeuUeiIMWsbZdyFTYe0VGuo0",
-  authDomain: "portfoliocontact-ec6a6.firebaseapp.com",
-  databaseURL: "https://portfoliocontact-ec6a6-default-rtdb.firebaseio.com",
-  projectId: "portfoliocontact-ec6a6",
-  storageBucket: "portfoliocontact-ec6a6.firebasestorage.app",
-  messagingSenderId: "624509064658",
-  appId: "1:624509064658:web:8f6120f8bd1170e725a40b",
-  measurementId: "G-0J3XLJL2BM"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const firestoreDB = getFirestore(app); // Firestore
+const firestoreDB = getFirestore(app);
 
 export { app, firestoreDB };
