@@ -67,7 +67,7 @@ function Navbar() {
           {["home", "about", "skills", "projects", "contact"].map((section) => (
             <li key={section} className="relative">
               <a
-                href={`${section}`}
+                href={`#${section}`}
                 onClick={() => scrollToSection(section)}
                 className={`block py-2 px-4 text-lg font-medium hover:text-blue-500 transition-all ${
                   activeSection === section ? "text-blue-600 font-bold" : ""

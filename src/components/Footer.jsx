@@ -34,7 +34,7 @@ function Footer() {
             <FaTwitter className="w-6 h-6 inline" />
           </a>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/md_saifaly/?igsh=ZGZoN3gyMjA5c3hr#"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-600 transition duration-300"

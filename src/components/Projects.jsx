@@ -19,7 +19,6 @@ function Projects() {
       description: "A scalable and responsive platform with integrated payment solutions.",
       link: "https://wearluxe-ten.vercel.app/",
       image: "images/wearluxe image.webp",
-      alt: "E-commerce project screenshot — Saif Ali",
       status: "In Progress",
       stack: [
         <FaReact key="react" className="text-blue-500" />,
@@ -37,7 +36,6 @@ function Projects() {
       description: "Explore, book, and experience unforgettable journeys with Travel Go – your ultimate travel companion.",
       link: "https://travel-go-neon.vercel.app/",
       image: "images/travel go image.webp",
-      alt: "Travel Go project screenshot — Saif Ali",
       status: "In Progress",
       stack: [
         <FaReact key="react" className="text-blue-500" />,
@@ -54,7 +52,6 @@ function Projects() {
       description: "Real-time weather updates using a REST API and geolocation.",
       link: "https://mdsaifaliii.github.io/CBTC/",
       image: "images/weather image.webp",
-      alt: "Weather App project screenshot — Saif Ali",
       status: "Live",
       stack: [
         <FaHtml5 key="Html" className="text-orange-500" />,
@@ -68,7 +65,6 @@ function Projects() {
       description: "A to-do list contains all the tasks that need to be done and can be ticked off accordingly.",
       link: "https://mdsaifaliii.github.io/Todo-list/",
       image: "images/to do list image.webp",
-      alt: "To-Do List App project screenshot — Saif Ali",
       status: "Live",
       stack: [
         <FaHtml5 key="Html" className="text-orange-500" />,
