@@ -62,7 +62,7 @@ function About() {
             </p>
 
             <a
-              href="#projects"
+              href="/projects"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition-transform transform hover:scale-105"
             >
               Explore My Projects

@@ -4,6 +4,8 @@ import "aos/dist/aos.css";
 import { FaArrowDown, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
+
+
 function Hero() {
   useEffect(() => {
     AOS.init();
@@ -76,7 +78,7 @@ function Hero() {
             </a>
 
             <a
-              href="about"
+              href="/about"
               className="bg-gray-800 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-gray-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50 text-white inline-flex items-center"
               data-aos="fade-up"
               data-aos-duration="3000"
@@ -130,7 +132,7 @@ function Hero() {
           data-aos-duration="4000"
           data-aos-delay="1000"
         >
-          <a href="#about" aria-label="Scroll Down">
+          <a href="/about" aria-label="Scroll Down">
             <FaArrowDown className="w-6 h-6" />
           </a>
         </div>

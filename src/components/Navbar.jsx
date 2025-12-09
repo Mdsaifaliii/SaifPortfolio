@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
