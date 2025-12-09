@@ -3,8 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaArrowDown, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-
-
+import { Link } from "react-router-dom";  // ✅ Import Link
 
 function Hero() {
   useEffect(() => {
@@ -15,7 +14,7 @@ function Hero() {
     <>
       {/* 🔥 SEO Helmet Section */}
       <Helmet>
-        <title>Mohd Saif Ali — Full Stack Developer & UI/UX Designer</title>
+        <title>Mohd Saif Ali — Full Stack Developer & UI/UX Designer | Software Developer & UI/UX Designer</title>
         <meta
           name="description"
           content="Hi, I'm Mohd Saif Ali — a Full Stack Web Developer specializing in React, Node.js, Firebase, and UI/UX design. I build modern, responsive, and scalable web applications."
@@ -32,11 +31,9 @@ function Hero() {
         className="h-screen bg-cover bg-center flex flex-col justify-center items-center text-black relative overflow-hidden"
         style={{
           backgroundImage: "url('/assets/hero-bg.jpg')",
-          backgroundAttachment:
-            window.innerWidth > 768 ? "fixed" : "scroll",
+          backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
         }}
       >
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/70 to-white/40"></div>
 
         <div className="relative p-6 sm:p-8 rounded-lg text-center z-10">
@@ -66,8 +63,8 @@ function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <a
-              href="contact"
+            <Link
+              to="/contact"  // ✅ React Router Link
               className="bg-blue-500 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white inline-flex items-center"
               data-aos="fade-up"
               data-aos-duration="3000"
@@ -75,10 +72,10 @@ function Hero() {
               style={{ fontFamily: "'Noto Sans', sans-serif" }}
             >
               Let's Connect <FaEnvelope className="ml-2" />
-            </a>
+            </Link>
 
-            <a
-              href="/about"
+            <Link
+              to="/about"  // ✅ React Router Link
               className="bg-gray-800 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-gray-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50 text-white inline-flex items-center"
               data-aos="fade-up"
               data-aos-duration="3000"
@@ -86,7 +83,7 @@ function Hero() {
               style={{ fontFamily: "'Noto Sans', sans-serif" }}
             >
               Learn More
-            </a>
+            </Link>
           </div>
 
           {/* Social Links */}
@@ -132,9 +129,9 @@ function Hero() {
           data-aos-duration="4000"
           data-aos-delay="1000"
         >
-          <a href="/about" aria-label="Scroll Down">
+          <Link to="/about" aria-label="Scroll Down">
             <FaArrowDown className="w-6 h-6" />
-          </a>
+          </Link>
         </div>
       </section>
     </>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import { Link, useLocation } from "react-router-dom";  // ✅ Import Link & useLocation
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const location = useLocation(); // ✅ To detect current route
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,23 +72,26 @@ function Navbar() {
         >
           {["home", "about", "skills", "projects", "contact"].map((section) => (
             <li key={section} className="relative">
-             <a
-  href={`#${section}`}      
-  onClick={(e) => {
-    e.preventDefault();      
-    scrollToSection(section); 
-  }}
-  className={`block py-2 px-4 text-lg font-medium hover:text-blue-500 transition-all ${
-    activeSection === section ? "text-blue-600 font-bold" : ""
-  }`}
->
-  {section.charAt(0).toUpperCase() + section.slice(1)}
+              {/* ✅ Use Link with onClick for smooth scroll */}
+              <Link
+                to={location.pathname === "/" ? `#${section}` : "/"} // If not home, redirect to home first
+                onClick={(e) => {
+                  if (location.pathname === "/") {
+                    e.preventDefault();
+                    scrollToSection(section);
+                  }
+                  setIsMenuOpen(false);
+                }}
+                className={`block py-2 px-4 text-lg font-medium hover:text-blue-500 transition-all ${
+                  activeSection === section ? "text-blue-600 font-bold" : ""
+                }`}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
 
-  {activeSection === section && (
-    <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600"></div>
-  )}
-</a>
-
+                {activeSection === section && (
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600"></div>
+                )}
+              </Link>
             </li>
           ))}
         </ul>

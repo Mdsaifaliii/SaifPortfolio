@@ -37,9 +37,9 @@ function Contact() {
 
   return (
     <>
-      {/* 🔥 SEO Helmet */}
+      {/* ✅ SEO Helmet */}
       <Helmet>
-        <title>Contact — Mohd Saif Ali | Hire Full Stack Developer</title>
+        <title>Contact — Mohd Saif Ali | Hire Full Stack Developer | Software Developer & UI/UX Designer</title>
         <meta
           name="description"
           content="Contact Mohd Saif Ali for freelance work, collaborations, or hiring opportunities. Send your message directly using this secure form."
@@ -60,10 +60,7 @@ function Contact() {
             className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md"
           >
             <div className="mb-4">
-              <label
-                htmlFor="name"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
+              <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
                 Name
               </label>
               <input
@@ -78,10 +75,7 @@ function Contact() {
             </div>
 
             <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
+              <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
                 Email
               </label>
               <input
@@ -96,10 +90,7 @@ function Contact() {
             </div>
 
             <div className="mb-4">
-              <label
-                htmlFor="message"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
+              <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">
                 Message
               </label>
               <textarea
@@ -115,9 +106,7 @@ function Contact() {
 
             <button
               type="submit"
-              className={`w-full ${
-                loading ? "bg-gray-400" : "bg-blue-600"
-              } text-white py-2 rounded-lg hover:bg-blue-700 shadow-md transition-all duration-300`}
+              className={`w-full ${loading ? "bg-gray-400" : "bg-blue-600"} text-white py-2 rounded-lg hover:bg-blue-700 shadow-md transition-all duration-300`}
               disabled={loading}
             >
               {loading ? "Sending..." : "Send Message"}

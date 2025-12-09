@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet-async";   // ✅ Add Helmet
+import { Helmet } from "react-helmet-async"; 
+import { Link } from "react-router-dom";  // ✅ Import Link
 import {
   FaHtml5,
   FaCss3Alt,
@@ -19,21 +20,21 @@ function About() {
 
   return (
     <>
-      {/* ✅ SEO Helmet */}
+      {/* SEO Helmet */}
       <Helmet>
-        <title>About — Mohd Saif Ali | Full Stack Web Developer</title>
+        <title>About — Mohd Saif Ali | Full Stack Web Developer | Software Developer & UI/UX Designer</title>
         <meta
           name="description"
           content="Learn about Mohd Saif Ali, a Full Stack Web Developer and UI/UX Designer skilled in React, Node.js, Firebase, Tailwind CSS, and modern web technologies."
         />
         <meta
           name="keywords"
-          content="About Mohd Saif Ali, Full Stack Developer, React Developer, UI/UX Designer, Web Developer Portfolio"
+          content="About Mohd Saif Ali, Full Stack Developer, React Developer, Software Developer, Software Engineer, UI/UX Designer, Web Developer Portfolio"
         />
         <link rel="canonical" href="https://saifali.vercel.app/about" />
       </Helmet>
 
-      {/* 🔵 ABOUT SECTION */}
+      {/* ABOUT SECTION */}
       <section
         id="about"
         className="bg-white py-24 px-6 md:px-12 lg:px-20 text-gray-900"
@@ -61,12 +62,13 @@ function About() {
               exceptional user experience and performance.
             </p>
 
-            <a
-              href="/projects"
+            {/* ✅ Updated Link for React Router */}
+            <Link
+              to="/projects"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition-transform transform hover:scale-105"
             >
               Explore My Projects
-            </a>
+            </Link>
           </div>
 
           {/* RIGHT: Skills Grid */}
