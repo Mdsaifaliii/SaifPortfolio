@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";  // ✅ Import Link & useLocation
+import { Link, useLocation, useNavigate } from "react-router-dom"; // ✅ useNavigate add kiya
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const location = useLocation(); // ✅ To detect current route
+  const location = useLocation();
+  const navigate = useNavigate(); // ✅ useNavigate for redirect
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,17 +40,23 @@ function Navbar() {
     }
   };
 
+  const handleClick = (section) => {
+    if (location.pathname === "/") {
+      scrollToSection(section);
+    } else {
+      navigate("/", { state: { scrollTo: section } }); // ✅ redirect to home with state
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
-    <nav
-      className="fixed top-0 left-0 w-full bg-white shadow-md z-50"
-      aria-label="Main Navigation"
-    >
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50" aria-label="Main Navigation">
       <div className="container mx-auto flex justify-between items-center p-4">
 
         {/* 🔵 Logo */}
         <div
           className="text-2xl font-bold text-blue-600 cursor-pointer"
-          onClick={() => scrollToSection("home")}
+          onClick={() => handleClick("home")}
           aria-label="Go to Home section"
         >
           Portfolio.
@@ -72,16 +79,8 @@ function Navbar() {
         >
           {["home", "about", "skills", "projects", "contact"].map((section) => (
             <li key={section} className="relative">
-              {/* ✅ Use Link with onClick for smooth scroll */}
-              <Link
-                to={location.pathname === "/" ? `#${section}` : "/"} // If not home, redirect to home first
-                onClick={(e) => {
-                  if (location.pathname === "/") {
-                    e.preventDefault();
-                    scrollToSection(section);
-                  }
-                  setIsMenuOpen(false);
-                }}
+              <button
+                onClick={() => handleClick(section)}
                 className={`block py-2 px-4 text-lg font-medium hover:text-blue-500 transition-all ${
                   activeSection === section ? "text-blue-600 font-bold" : ""
                 }`}
@@ -91,7 +90,7 @@ function Navbar() {
                 {activeSection === section && (
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600"></div>
                 )}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
