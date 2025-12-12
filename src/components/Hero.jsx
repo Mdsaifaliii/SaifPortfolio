@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaArrowDown, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";  // ✅ Import Link
+import { Link } from "react-router-dom"; 
 
 function Hero() {
   useEffect(() => {
@@ -12,7 +12,7 @@ function Hero() {
 
   return (
     <>
-      {/* 🔥 SEO Helmet Section */}
+      {/* SEO Helmet Section */}
       <Helmet>
         <title>Mohd Saif Ali — Full Stack Developer & UI/UX Designer | Software Developer & UI/UX Designer</title>
         <meta
@@ -64,7 +64,7 @@ function Hero() {
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Link
-              to="/contact"  // ✅ React Router Link
+              to="/contact"  
               className="bg-blue-500 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white inline-flex items-center"
               data-aos="fade-up"
               data-aos-duration="3000"
@@ -75,7 +75,7 @@ function Hero() {
             </Link>
 
             <Link
-              to="/about"  // ✅ React Router Link
+              to="/about" 
               className="bg-gray-800 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-gray-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50 text-white inline-flex items-center"
               data-aos="fade-up"
               data-aos-duration="3000"

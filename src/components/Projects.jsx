@@ -8,7 +8,7 @@ import {
   FaJs,
   FaGithub
 } from "react-icons/fa";
-import { Helmet } from "react-helmet-async";  // ✅ Helmet added
+import { Helmet } from "react-helmet-async"; 
 
 function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -87,7 +87,7 @@ function Projects() {
 
   return (
     <>
-      {/* 🔥 SEO Helmet */}
+      {/* SEO Helmet */}
       <Helmet>
         <title>Projects — Mohd Saif Ali | Full Stack Developer | Software Developer & UI/UX Designer</title>
         <meta
@@ -148,7 +148,6 @@ function Projects() {
             ))}
           </div>
 
-          {/* Modal */}
           {modalOpen && selectedProject && (
             <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex justify-center items-center px-4">
               <div className="bg-white w-full max-w-3xl rounded-lg overflow-y-auto max-h-[90vh] p-6 relative">

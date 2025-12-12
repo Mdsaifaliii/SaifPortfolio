@@ -24,7 +24,7 @@ import { FaFigma } from "react-icons/fa";
 function Skills() {
   return (
     <>
-      {/* 🔥 SEO Helmet */}
+      {/* SEO Helmet */}
       <Helmet>
         <title>Skills — Mohd Saif Ali | Web Developer & Designer | Software Developer & UI/UX Designer</title>
         <meta

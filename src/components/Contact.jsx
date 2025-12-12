@@ -37,7 +37,7 @@ function Contact() {
 
   return (
     <>
-      {/* ✅ SEO Helmet */}
+      {/* SEO Helmet */}
       <Helmet>
         <title>Contact — Mohd Saif Ali | Hire Full Stack Developer | Software Developer & UI/UX Designer</title>
         <meta

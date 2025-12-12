@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // ✅ useNavigate add kiya
+import { Link, useLocation, useNavigate } from "react-router-dom"; 
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const location = useLocation();
-  const navigate = useNavigate(); // ✅ useNavigate for redirect
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +44,7 @@ function Navbar() {
     if (location.pathname === "/") {
       scrollToSection(section);
     } else {
-      navigate("/", { state: { scrollTo: section } }); // ✅ redirect to home with state
+      navigate("/", { state: { scrollTo: section } }); 
     }
     setIsMenuOpen(false);
   };
@@ -53,7 +53,7 @@ function Navbar() {
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50" aria-label="Main Navigation">
       <div className="container mx-auto flex justify-between items-center p-4">
 
-        {/* 🔵 Logo */}
+        {/* Logo */}
         <div
           className="text-2xl font-bold text-blue-600 cursor-pointer"
           onClick={() => handleClick("home")}

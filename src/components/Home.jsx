@@ -1,4 +1,3 @@
-// src/components/Home.jsx
 import React, { useEffect } from "react";
 import Hero from "./Hero";
 import About from "./About";
