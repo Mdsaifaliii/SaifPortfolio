@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import { firestoreDB } from "../Firebase"; 
+import React, { useState, useEffect } from "react";
+import { firestoreDB } from "../Firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { Helmet } from "react-helmet-async";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,86 +43,122 @@ function Contact() {
 
   return (
     <>
-      {/* SEO Helmet */}
       <Helmet>
-        <title>Contact — Mohd Saif Ali | Hire Full Stack Developer | Software Developer & UI/UX Designer</title>
+        <title>Contact — Mohd Saif Ali | Full Stack Developer | UI/UX Designer</title>
         <meta
           name="description"
-          content="Contact Mohd Saif Ali for freelance work, collaborations, or hiring opportunities. Send your message directly using this secure form."
+          content="Contact Mohd Saif Ali for freelance projects, collaborations, or hiring opportunities. Send your message through this secure and responsive contact form."
         />
         <meta
           name="keywords"
-          content="Contact Saif Ali, Hire Developer, Contact Mohd Saif, Web Developer Contact"
+          content="Contact Saif Ali, Hire Developer, Contact Mohd Saif, Software Developer Contact"
         />
         <link rel="canonical" href="https://saifali.vercel.app/contact" />
       </Helmet>
 
-      <section id="contact" className="py-16 px-8 bg-gray-50">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
 
+          {/* Profile Image */}
+          <div data-aos="fade-down" className="flex justify-center">
+            <img
+              src="/images/myimage.webp"
+              alt="Mohd Saif Ali"
+              className="w-40 h-40 rounded-full object-cover border-4 border-blue-600 shadow-xl mb-6 
+                        transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            />
+          </div>
+
+          <h2
+            data-aos="fade-up"
+            className="text-4xl font-extrabold text-gray-900 mb-6"
+          >
+            Get in Touch
+          </h2>
+
+          <p
+            data-aos="fade-up"
+            className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto"
+          >
+            Whether you want to discuss a project, collaboration, or just say
+            hello — feel free to send a message. I’ll get back to you as soon as possible.
+          </p>
+
+          {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            className="bg-white shadow-xl rounded-2xl p-8 max-w-xl mx-auto 
+                       transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
           >
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
-                Name
-              </label>
+            {/* Name */}
+            <div className="mb-5 text-left">
+              <label className="block text-gray-700 font-semibold mb-1">Name</label>
               <input
                 type="text"
-                id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
+                className="w-full px-4 py-3 border rounded-lg 
+                           focus:ring-2 focus:ring-blue-400 focus:outline-none
+                           transition-all duration-200 hover:shadow-md"
                 required
               />
             </div>
 
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-                Email
-              </label>
+            {/* Email */}
+            <div className="mb-5 text-left">
+              <label className="block text-gray-700 font-semibold mb-1">Email</label>
               <input
                 type="email"
-                id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
+                className="w-full px-4 py-3 border rounded-lg 
+                           focus:ring-2 focus:ring-blue-400 focus:outline-none
+                           transition-all duration-200 hover:shadow-md"
                 required
               />
             </div>
 
-            <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">
-                Message
-              </label>
+            {/* Message */}
+            <div className="mb-5 text-left">
+              <label className="block text-gray-700 font-semibold mb-1">Message</label>
               <textarea
-                id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
+                className="w-full px-4 py-3 border rounded-lg 
+                           focus:ring-2 focus:ring-blue-400 focus:outline-none
+                           transition-all duration-200 hover:shadow-md"
                 rows="4"
                 required
               ></textarea>
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
-              className={`w-full ${loading ? "bg-gray-400" : "bg-blue-600"} text-white py-2 rounded-lg hover:bg-blue-700 shadow-md transition-all duration-300`}
               disabled={loading}
+              className={`w-full py-3 rounded-lg text-white text-lg shadow-lg transition-all 
+                ${loading
+                  ? "bg-gray-400"
+                  : "bg-blue-600 hover:bg-blue-700 hover:shadow-2xl hover:-translate-y-1"
+                }`}
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
 
+          {/* Success Message */}
           {submitted && (
-            <div className="mt-6 bg-green-100 text-green-800 p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold">Thank you for reaching out!</h3>
-              <p className="mt-2">Your message has been sent successfully.</p>
+            <div
+              data-aos="zoom-in"
+              className="mt-8 bg-green-100 text-green-800 p-5 rounded-xl shadow-md"
+            >
+              <h3 className="text-xl font-bold">Thank you for reaching out!</h3>
+              <p className="mt-1">Your message has been sent successfully.</p>
             </div>
           )}
         </div>
