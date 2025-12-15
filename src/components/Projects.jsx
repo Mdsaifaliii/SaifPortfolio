@@ -6,9 +6,9 @@ import {
   FaCss3Alt,
   FaHtml5,
   FaJs,
-  FaGithub
+  FaGithub,
 } from "react-icons/fa";
-import { Helmet } from "react-helmet-async"; 
+import { Helmet } from "react-helmet-async";
 
 function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -16,11 +16,12 @@ function Projects() {
 
   const projects = [
     {
-      title: "Wearluxe E-Commerce Website",
-      description: "A scalable and responsive platform with integrated payment solutions.",
-      link: "https://wearluxe-ten.vercel.app/",
-      image: "images/wearluxe image.webp",
-      status: "In Progress",
+      title: "Travel Go",
+      description:
+        "Travel Go is a modern and responsive travel website designed to help users explore destinations, view tour packages, and plan their trips effortlessly. The platform focuses on clean UI, smooth navigation, and an engaging user experience across all devices.Built using modern web technologies, Travel Go showcases real-world travel website features with performance-optimized design and intuitive layouts.",
+      link: "https://travel-go-neon.vercel.app/",
+      image: "images/travel go image.webp",
+      status: "Live",
       stack: [
         <FaReact key="react" className="text-blue-500" />,
         <FaNodeJs key="node" className="text-green-500" />,
@@ -28,15 +29,16 @@ function Projects() {
         <SiVercel key="vercel" className="text-black" />,
         <SiFirebase key="firebase" className="text-yellow-500" />,
         <SiMongodb key="mongodb" className="text-green-600" />,
-        <FaGithub key="github" className="text-gray-800" />
+        <FaGithub key="github" className="text-gray-800" />,
       ],
     },
     {
-      title: "Travel Go Website",
-      description: "Explore, book, and experience unforgettable journeys with Travel Go.",
-      link: "https://travel-go-neon.vercel.app/",
-      image: "images/travel go image.webp",
-      status: "In Progress",
+      title: "Wearluxe E-Commerce",
+      description:
+        "A modern and responsive e-commerce frontend built using React and Tailwind CSS, showcasing a seamless shopping experience with clean design, optimized performance, and intuitive UI components.",
+      link: "https://wearluxe-ten.vercel.app/",
+      image: "images/wearluxe image.webp",
+      status: "Live",
       stack: [
         <FaReact key="react" className="text-blue-500" />,
         <FaNodeJs key="node" className="text-green-500" />,
@@ -44,12 +46,13 @@ function Projects() {
         <SiVercel key="vercel" className="text-black" />,
         <SiFirebase key="firebase" className="text-yellow-500" />,
         <SiMongodb key="mongodb" className="text-green-600" />,
-        <FaGithub key="github" className="text-gray-800" />
+        <FaGithub key="github" className="text-gray-800" />,
       ],
     },
     {
       title: "Weather App",
-      description: "Real-time weather updates using a REST API & geolocation.",
+      description:
+        "A responsive Weather Application that provides real-time weather updates for any location using a public weather API. Users can search cities to instantly view temperature, weather conditions, and related climate information through a clean and intuitive interface. This project focuses on API integration, asynchronous JavaScript, and dynamic UI updates, demonstrating practical front-end development skills.",
       link: "https://mdsaifaliii.github.io/CBTC/",
       image: "images/weather image.webp",
       status: "Live",
@@ -57,12 +60,13 @@ function Projects() {
         <FaHtml5 key="html" className="text-orange-500" />,
         <FaCss3Alt key="css" className="text-blue-500" />,
         <FaJs key="js" className="text-yellow-500" />,
-        <FaGithub key="github" className="text-gray-800" />
+        <FaGithub key="github" className="text-gray-800" />,
       ],
     },
     {
       title: "Todo List App",
-      description: "A clean and simple task manager app.",
+      description:
+        "A simple and efficient Todo List application that helps users organize daily tasks by adding, completing, and managing their to-do items easily. The app provides a clean and user-friendly interface focused on productivity and simplicity.",
       link: "https://mdsaifaliii.github.io/Todo-list/",
       image: "images/to do list image.webp",
       status: "Live",
@@ -70,7 +74,7 @@ function Projects() {
         <FaHtml5 key="html" className="text-orange-500" />,
         <FaCss3Alt key="css" className="text-blue-500" />,
         <FaJs key="js" className="text-yellow-500" />,
-        <FaGithub key="github" className="text-gray-800" />
+        <FaGithub key="github" className="text-gray-800" />,
       ],
     },
   ];
@@ -89,7 +93,10 @@ function Projects() {
     <>
       {/* SEO Helmet */}
       <Helmet>
-        <title>Projects — Mohd Saif Ali | Full Stack Developer | Software Developer & UI/UX Designer</title>
+        <title>
+          Projects — Mohd Saif Ali | Full Stack Developer | Software Developer &
+          UI/UX Designer
+        </title>
         <meta
           name="description"
           content="Explore Mohd Saif Ali's web development projects including E-commerce, Travel, Weather App, and Todo App built using React, Node.js, Firebase, and more."
@@ -103,7 +110,9 @@ function Projects() {
 
       <section id="projects" className="py-20 px-4 sm:px-10 bg-gray-100">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">Projects</h2>
+          <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">
+            Projects
+          </h2>
 
           {/* Projects Grid */}
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -113,11 +122,19 @@ function Projects() {
                 className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition-transform transform hover:-translate-y-1 cursor-pointer"
                 onClick={() => openModal(project)}
               >
-                <img src={project.image} alt={project.title} className="w-full h-52 object-cover" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-52 object-cover"
+                />
 
                 <div className="p-5">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{project.description}</p>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-2">
+                    {project.description}
+                  </p>
 
                   <span
                     className={`inline-block text-xs px-3 py-1 rounded-full font-medium ${
@@ -131,7 +148,9 @@ function Projects() {
 
                   <div className="flex items-center gap-3 mt-3">
                     {project.stack.map((icon, i) => (
-                      <span key={i} className="text-2xl">{icon}</span>
+                      <span key={i} className="text-2xl">
+                        {icon}
+                      </span>
                     ))}
                   </div>
 
@@ -158,7 +177,9 @@ function Projects() {
                   &times;
                 </button>
 
-                <h3 className="text-2xl font-bold mb-4">{selectedProject.title}</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  {selectedProject.title}
+                </h3>
 
                 <img
                   src={selectedProject.image}
@@ -166,12 +187,18 @@ function Projects() {
                   className="w-full h-64 object-cover rounded-md mb-4"
                 />
 
-                <p className="text-gray-700 mb-3">{selectedProject.description}</p>
-                <p className="text-sm text-gray-500 mb-2">Status: {selectedProject.status}</p>
+                <p className="text-gray-700 mb-3">
+                  {selectedProject.description}
+                </p>
+                <p className="text-sm text-gray-500 mb-2">
+                  Status: {selectedProject.status}
+                </p>
 
                 <div className="flex items-center gap-3 mt-2 mb-4">
                   {selectedProject.stack.map((icon, i) => (
-                    <span key={i} className="text-2xl">{icon}</span>
+                    <span key={i} className="text-2xl">
+                      {icon}
+                    </span>
                   ))}
                 </div>
 

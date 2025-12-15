@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaArrowDown, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 function Hero() {
   useEffect(() => {
@@ -14,7 +14,10 @@ function Hero() {
     <>
       {/* SEO Helmet Section */}
       <Helmet>
-        <title>Mohd Saif Ali — Full Stack Developer & UI/UX Designer | Software Developer & UI/UX Designer</title>
+        <title>
+          Mohd Saif Ali — Full Stack Developer & UI/UX Designer | Software
+          Developer & UI/UX Designer
+        </title>
         <meta
           name="description"
           content="Hi, I'm Mohd Saif Ali — a Full Stack Web Developer specializing in React, Node.js, Firebase, and UI/UX design. I build modern, responsive, and scalable web applications."
@@ -44,7 +47,7 @@ function Hero() {
             style={{ fontFamily: "'Noto Sans', sans-serif" }}
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500">
-              Hi,
+              Hi, I'm
             </span>{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500">
               Mohd Saif Ali
@@ -64,7 +67,7 @@ function Hero() {
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Link
-              to="/contact"  
+              to="/contact"
               className="bg-blue-500 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white inline-flex items-center"
               data-aos="fade-up"
               data-aos-duration="3000"
@@ -75,7 +78,7 @@ function Hero() {
             </Link>
 
             <Link
-              to="/about" 
+              to="/about"
               className="bg-gray-800 px-8 py-3 text-lg sm:text-xl font-semibold rounded-lg shadow-lg transition duration-300 transform hover:bg-gray-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50 text-white inline-flex items-center"
               data-aos="fade-up"
               data-aos-duration="3000"
