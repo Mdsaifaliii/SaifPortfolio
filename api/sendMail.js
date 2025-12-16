@@ -19,18 +19,18 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
-      subject: `New Contact Inquiry from ${name}`,
+      subject: `New Contact from ${name}`,
       html: `
-        <h2>New Contact Message</h2>
+        <h3>New Inquiry</h3>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
-        <p><b>Message:</b><br/>${message}</p>
+        <p><b>Message:</b> ${message}</p>
       `,
     });
 
     return res.status(200).json({ success: true });
   } catch (error) {
-    console.error("Email error:", error);
+    console.error("Mail Error:", error);
     return res.status(500).json({ success: false });
   }
 }
