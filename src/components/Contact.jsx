@@ -44,7 +44,7 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact — Mohd Saif Ali | Full Stack Developer | UI/UX Designer</title>
+        <title>Contact — Mohd Saif Ali | Software Developer | UI/UX Designer</title>
         <meta
           name="description"
           content="Contact Mohd Saif Ali for freelance projects, collaborations, or hiring opportunities. Send your message through this secure and responsive contact form."
@@ -61,14 +61,7 @@ function Contact() {
         <div className="max-w-4xl mx-auto text-center">
 
           {/* Profile Image */}
-          <div data-aos="fade-down" className="flex justify-center">
-            <img
-              src="/images/myimage.webp"
-              alt="Mohd Saif Ali"
-              className="w-40 h-40 rounded-full object-cover border-4 border-blue-600 shadow-xl mb-6 
-                        transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-            />
-          </div>
+       
 
           <h2
             data-aos="fade-up"
