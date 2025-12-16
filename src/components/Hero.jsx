@@ -96,14 +96,14 @@ function Hero() {
             data-aos-duration="3500"
             data-aos-delay="600"
           >
-            {/* <a
+             {/* <a
               href="https://github.com/Mdsaifaliii"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-gray-900 text-3xl transition duration-300"
             >
               <FaGithub />
-            </a> */}
+            </a>  */}
             <a
               href="https://www.linkedin.com/in/saif-ali-b703aa28a/"
               target="_blank"
