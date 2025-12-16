@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaArrowDown, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaArrowDown, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ function Hero() {
       {/* SEO Helmet Section */}
       <Helmet>
         <title>
-          Mohd Saif Ali — Full Stack Developer & UI/UX Designer | Software
+          Mohd Saif Ali — Full Stack Developer | Software
           Developer & UI/UX Designer
         </title>
         <meta
@@ -96,14 +96,6 @@ function Hero() {
             data-aos-duration="3500"
             data-aos-delay="600"
           >
-             {/* <a
-              href="https://github.com/Mdsaifaliii"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-700 hover:text-gray-900 text-3xl transition duration-300"
-            >
-              <FaGithub />
-            </a>  */}
             <a
               href="https://www.linkedin.com/in/saif-ali-b703aa28a/"
               target="_blank"
