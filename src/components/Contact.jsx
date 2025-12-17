@@ -18,8 +18,7 @@ function Contact() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
 
-    // 🔴 IMPORTANT: EmailJS init
-    emailjs.init("0C0X7OgvBAILijACj"); // PUBLIC KEY
+    emailjs.init("0C0X7OgvBAILijACj"); 
   }, []);
 
   const handleChange = (e) => {
@@ -32,7 +31,7 @@ function Contact() {
     setLoading(true);
 
     try {
-      // ✅ Save message to Firestore
+      // Save message to Firestore
       await addDoc(collection(firestoreDB, "messages"), {
         name: formData.name,
         email: formData.email,
@@ -40,10 +39,10 @@ function Contact() {
         timestamp: new Date(),
       });
 
-      // ✅ Send email via EmailJS
+      // Send email via EmailJS
       await emailjs.send(
-        "service_fg9k5eh",     // Service ID
-        "template_fwhbrhd",    // Template ID
+        "service_fg9k5eh",     
+        "template_fwhbrhd",    
         {
           name: formData.name,
           email: formData.email,
@@ -55,7 +54,7 @@ function Contact() {
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("EMAIL ERROR:", error);
-      alert("Message send nahi ho paya");
+      alert("The message could not be sent!");
     } finally {
       setLoading(false);
     }
