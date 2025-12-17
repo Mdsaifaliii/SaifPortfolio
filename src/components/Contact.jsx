@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import { firestoreDB } from "../Firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { Helmet } from "react-helmet-async";
+import emailjs from "emailjs-com";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -24,18 +29,28 @@ function Contact() {
     setLoading(true);
 
     try {
+      //  Save to Firestore
       await addDoc(collection(firestoreDB, "messages"), {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
+        ...formData,
         timestamp: new Date(),
       });
+      // Send Email via EmailJS
+      await emailjs.send(
+        "service_fg9k5eh",      
+        "template_fwhbrhd",     
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "0C0X7OgvBAILijACj"       
+      );
 
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Failed to send your message. Please try again.");
+      console.error("Error:", error);
+      alert("Message send nahi ho paya");
     } finally {
       setLoading(false);
     }
