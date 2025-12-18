@@ -17,14 +17,14 @@ function Footer() {
           >
             <FaLinkedin className="w-6 h-6 inline" />
           </a>
-          <a
+          {/* <a
             href="https://github.com/Mdsaifaliii"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 mr-4 hover:text-blue-600 transition duration-300"
           >
             <FaGithub className="w-6 h-6 inline" />
-          </a>
+          </a> */}
           <a
             href="https://twitter.com"
             target="_blank"
