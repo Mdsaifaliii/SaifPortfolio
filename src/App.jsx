@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/skills" element={<Home scrollTo="skills" />} />
           <Route path="/projects" element={<Home scrollTo="projects" />} />
           <Route path="/contact" element={<Home scrollTo="contact" />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
