@@ -10,7 +10,7 @@ function Footer() {
         {/* Social Media Icons */}
         <div className="mt-2">
           <a
-            href="https://www.linkedin.com/in/saif-ali-b703aa28a/"
+            href="https://www.linkedin.com/in/mohd-saif-ali-software-developer/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 mr-4 hover:text-blue-600 transition duration-300"

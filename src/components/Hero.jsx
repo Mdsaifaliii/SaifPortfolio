@@ -97,7 +97,7 @@ function Hero() {
             data-aos-delay="600"
           >
             <a
-              href="https://www.linkedin.com/in/saif-ali-b703aa28a/"
+              href="https://www.linkedin.com/in/mohd-saif-ali-software-developer/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-700 hover:text-blue-900 text-3xl transition duration-300"
