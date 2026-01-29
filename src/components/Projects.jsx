@@ -1,218 +1,126 @@
-import React, { useState } from "react";
-import { SiFirebase, SiMongodb, SiVercel } from "react-icons/si";
-import {
-  FaReact,
-  FaNodeJs,
-  FaCss3Alt,
-  FaHtml5,
-  FaJs,
-  FaGithub,
-} from "react-icons/fa";
+import React from "react";
+import SwipeCards from "../components/SwipeCards";
 import { Helmet } from "react-helmet-async";
 
 function Projects() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
 
-  const projects = [
+  const websites = [
     {
-      title: "Travel Go",
-      description:
-        "Travel Go is a modern and responsive travel website designed to help users explore destinations, view tour packages, and plan their trips effortlessly. The platform focuses on clean UI, smooth navigation, and an engaging user experience across all devices.Built using modern web technologies, Travel Go showcases real-world travel website features with performance-optimized design and intuitive layouts.",
-      link: "https://travel-go-neon.vercel.app/",
-      image: "images/travel go image.webp",
-      status: "Live",
-      stack: [
-        <FaReact key="react" className="text-blue-500" />,
-        <FaNodeJs key="node" className="text-green-500" />,
-        <FaCss3Alt key="css" className="text-blue-300" />,
-        <SiVercel key="vercel" className="text-black" />,
-        <SiFirebase key="firebase" className="text-yellow-500" />,
-        <SiMongodb key="mongodb" className="text-green-600" />,
-        <FaGithub key="github" className="text-gray-800" />,
-      ],
+      title: "Travel Booking Website",
+      description: "A full tour booking platform with packages, booking & dashboard.",
+      image: "/images/Travelgo.webp",
+      live: "https://travel-go-neon.vercel.app/",
     },
     {
-      title: "Wearluxe E-Commerce",
-      description:
-        "A modern and responsive e-commerce frontend built using React and Tailwind CSS, showcasing a seamless shopping experience with clean design, optimized performance, and intuitive UI components.",
-      link: "https://wearluxe-ten.vercel.app/",
-      image: "images/wearluxe image.webp",
-      status: "Live",
-      stack: [
-        <FaReact key="react" className="text-blue-500" />,
-        <FaNodeJs key="node" className="text-green-500" />,
-        <FaCss3Alt key="css" className="text-blue-300" />,
-        <SiVercel key="vercel" className="text-black" />,
-        <SiFirebase key="firebase" className="text-yellow-500" />,
-        <SiMongodb key="mongodb" className="text-green-600" />,
-        <FaGithub key="github" className="text-gray-800" />,
-      ],
-    },
-    {
-      title: "Weather App",
-      description:
-        "A responsive Weather Application that provides real-time weather updates for any location using a public weather API. Users can search cities to instantly view temperature, weather conditions, and related climate information through a clean and intuitive interface. This project focuses on API integration, asynchronous JavaScript, and dynamic UI updates, demonstrating practical front-end development skills.",
-      link: "https://mdsaifaliii.github.io/CBTC/",
-      image: "images/weather image.webp",
-      status: "Live",
-      stack: [
-        <FaHtml5 key="html" className="text-orange-500" />,
-        <FaCss3Alt key="css" className="text-blue-500" />,
-        <FaJs key="js" className="text-yellow-500" />,
-        <FaGithub key="github" className="text-gray-800" />,
-      ],
-    },
-    {
-      title: "Todo List App",
-      description:
-        "A simple and efficient Todo List application that helps users organize daily tasks by adding, completing, and managing their to-do items easily. The app provides a clean and user-friendly interface focused on productivity and simplicity.",
-      link: "https://mdsaifaliii.github.io/Todo-list/",
-      image: "images/to do list image.webp",
-      status: "Live",
-      stack: [
-        <FaHtml5 key="html" className="text-orange-500" />,
-        <FaCss3Alt key="css" className="text-blue-500" />,
-        <FaJs key="js" className="text-yellow-500" />,
-        <FaGithub key="github" className="text-gray-800" />,
-      ],
+      title: "Clothing E-Commerce",
+      description: "Modern fashion store with cart, filters & product variants.",
+      image: "/images/Wearluxe.webp",
+      live: "https://wearluxe-ten.vercel.app/",
     },
   ];
 
-  const openModal = (p) => {
-    setSelectedProject(p);
-    setModalOpen(true);
-  };
+  const miniProjects = [
+    {
+      title: "Weather App",
+      description: "Live weather forecast using API integration.",
+      image: "/images/weather image.webp",
+      live: "https://mdsaifaliii.github.io/CBTC/",
+    },
+    {
+      title: "To-Do List",
+      description: "Task manager with local storage support.",
+      image: "/images/to do list image.webp",
+      live: "https://mdsaifaliii.github.io/Todo-list/",
+    },
+  ];
 
-  const closeModal = () => {
-    setModalOpen(false);
-    setSelectedProject(null);
+  const ProjectCard = ({ project }) => {
+    return (
+      <a
+        href={project.live}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative block rounded-2xl overflow-hidden shadow-lg"
+      >
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-80 object-cover group-hover:scale-110 transition duration-500"
+        />
+
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center p-4">
+          <h3 className="text-white text-xl font-bold mb-2">
+            {project.title}
+          </h3>
+          <p className="text-gray-200 text-sm">
+            {project.description}
+          </p>
+        </div>
+      </a>
+    );
   };
 
   return (
     <>
-      {/* SEO Helmet */}
       <Helmet>
-        <title>
-          Projects — Mohd Saif Ali | Full Stack Developer | Software Developer &
-          UI/UX Designer
-        </title>
+        <title>Projects — Mohd Saif Ali | Full Stack Developer</title>
         <meta
           name="description"
-          content="Explore Mohd Saif Ali's web development projects including E-commerce, Travel, Weather App, and Todo App built using React, Node.js, Firebase, and more."
-        />
-        <meta
-          name="keywords"
-          content="Mohd Saif Ali Projects, Full Stack Developer, React Projects, Node.js Projects, Portfolio Projects"
+          content="Professional portfolio projects by Mohd Saif Ali including full-stack websites and interactive mini projects."
         />
         <link rel="canonical" href="https://saifali.vercel.app/projects" />
       </Helmet>
 
       <section id="projects" className="py-20 px-4 sm:px-10 bg-gray-100">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">
-            Projects
+
+          <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
+            Project Highlights
           </h2>
 
-          {/* Projects Grid */}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition-transform transform hover:-translate-y-1 cursor-pointer"
-                onClick={() => openModal(project)}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-52 object-cover"
-                />
+          {/* 🔥 TOP NAV TABS */}
+          <div className="flex justify-center gap-6 mb-16">
+  <button
+    onClick={() => document.getElementById("websites").scrollIntoView({ behavior: "smooth" })}
+    className="px-6 py-2 rounded-full font-semibold border border-gray-300 bg-white hover:bg-blue-600 hover:text-white transition duration-300 shadow-sm"
+  >
+    Web Apps
+  </button>
 
-                <div className="p-5">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-2">
-                    {project.description}
-                  </p>
+  <button
+    onClick={() => document.getElementById("mini-projects").scrollIntoView({ behavior: "smooth" })}
+    className="px-6 py-2 rounded-full font-semibold border border-gray-300 bg-white hover:bg-blue-600 hover:text-white transition duration-300 shadow-sm"
+  >
+    Mini Projects
+  </button>
+</div>
 
-                  <span
-                    className={`inline-block text-xs px-3 py-1 rounded-full font-medium ${
-                      project.status === "Live"
-                        ? "bg-green-100 text-green-700"
-                        : "bg-yellow-100 text-yellow-700"
-                    }`}
-                  >
-                    {project.status}
-                  </span>
+          {/* 🌐 WEBSITES SECTION */}
+          <h3
+            id="websites"
+            className="text-2xl font-bold text-gray-800 mb-10 scroll-mt-24"
+          >
+            Web Apps
+          </h3>
 
-                  <div className="flex items-center gap-3 mt-3">
-                    {project.stack.map((icon, i) => (
-                      <span key={i} className="text-2xl">
-                        {icon}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener"
-                    className="inline-block mt-4 text-blue-600 font-semibold hover:underline"
-                  >
-                    View Project
-                  </a>
-                </div>
-              </div>
+          <div className="grid gap-10 sm:grid-cols-2 mb-20">
+            {websites.map((project, index) => (
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
 
-          {modalOpen && selectedProject && (
-            <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex justify-center items-center px-4">
-              <div className="bg-white w-full max-w-3xl rounded-lg overflow-y-auto max-h-[90vh] p-6 relative">
-                <button
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 text-red-600 font-bold text-xl hover:text-red-800"
-                >
-                  &times;
-                </button>
+          {/* 🧩 MINI PROJECTS SECTION */}
+          <h3
+            id="mini-projects"
+            className="text-2xl font-bold text-gray-800 mb-10 scroll-mt-24"
+          >
+            Mini Projects
+          </h3>
 
-                <h3 className="text-2xl font-bold mb-4">
-                  {selectedProject.title}
-                </h3>
+          <div className="flex justify-center">
+            <SwipeCards cards={miniProjects} />
+          </div>
 
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-64 object-cover rounded-md mb-4"
-                />
-
-                <p className="text-gray-700 mb-3">
-                  {selectedProject.description}
-                </p>
-                <p className="text-sm text-gray-500 mb-2">
-                  Status: {selectedProject.status}
-                </p>
-
-                <div className="flex items-center gap-3 mt-2 mb-4">
-                  {selectedProject.stack.map((icon, i) => (
-                    <span key={i} className="text-2xl">
-                      {icon}
-                    </span>
-                  ))}
-                </div>
-
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener"
-                  className="text-blue-600 font-medium hover:underline"
-                >
-                  Visit Live Site
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </section>
     </>
