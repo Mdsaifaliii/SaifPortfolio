@@ -42,11 +42,12 @@ function Projects() {
         rel="noopener noreferrer"
         className="group relative block rounded-2xl overflow-hidden shadow-lg"
       >
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-80 object-cover group-hover:scale-110 transition duration-500"
-        />
+      <img
+  src={project.image}
+  alt={project.title}
+  className="w-full h-60 sm:h-80 md:h-80 lg:h-96 object-contain group-hover:scale-110 transition duration-500"
+/>
+
 
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center p-4">
           <h3 className="text-white text-xl font-bold mb-2">
@@ -103,7 +104,7 @@ function Projects() {
             Web Apps
           </h3>
 
-          <div className="grid gap-10 sm:grid-cols-2 mb-20">
+          <div className="grid gap-6 sm:grid-cols-2 mb-20 ">
             {websites.map((project, index) => (
               <ProjectCard key={index} project={project} />
             ))}
