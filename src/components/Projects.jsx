@@ -1,6 +1,7 @@
 import React from "react";
 import SwipeCards from "../components/SwipeCards";
 import { Helmet } from "react-helmet-async";
+import { FaArrowRight } from "react-icons/fa";
 
 function Projects() {
 
@@ -34,32 +35,41 @@ function Projects() {
     },
   ];
 
-  const ProjectCard = ({ project }) => {
-    return (
-      <a
-        href={project.live}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative block rounded-2xl overflow-hidden shadow-lg"
-      >
+ const ProjectCard = ({ project }) => {
+  return (
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative block rounded-2xl overflow-hidden shadow-lg"
+    >
       <img
-  src={project.image}
-  alt={project.title}
-  className="w-full h-60 sm:h-80 md:h-80 lg:h-96 object-contain group-hover:scale-110 transition duration-500"
-/>
+        src={project.image}
+        alt={project.title}
+        className="w-full h-60 sm:h-80 md:h-80 lg:h-96 object-cover group-hover:scale-110 transition duration-500 border-none"
+      />
 
+      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center p-4">
+        <h3 className="text-white text-xl font-bold mb-2">{project.title}</h3>
+        <p className="text-gray-200 text-sm">{project.description}</p>
 
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center p-4">
-          <h3 className="text-white text-xl font-bold mb-2">
-            {project.title}
-          </h3>
-          <p className="text-gray-200 text-sm">
-            {project.description}
-          </p>
+        {/* Arrow Icon for Link */}
+        <div className="mt-4 flex justify-center">
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-500 transition duration-300"
+          >
+            <FaArrowRight size={30} />
+          </a>
         </div>
-      </a>
-    );
-  };
+      </div>
+    </a>
+  );
+};
+
+
 
   return (
     <>
