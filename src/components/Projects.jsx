@@ -6,6 +6,12 @@ import { FaArrowRight } from "react-icons/fa";
 function Projects() {
 
   const websites = [
+      {
+      title: "Quick Cart E-Commerce",
+      description: "QuickCart is a modern ecommerce platform offering electronics, fast shopping, secure checkout, and exclusive deals.",
+      image: "/images/quickcart.webp",
+      live: "https://quick-cart-nine-black.vercel.app/",
+    },
     {
       title: "Travel Booking Website",
       description: "A full tour booking platform with packages, booking & dashboard.",
